@@ -1,70 +1,81 @@
 <!DOCTYPE html>
 <html class="light" lang="en">
 <head>
-    <meta charset="utf-8"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <title>FFI Backoffice - Precision Agriculture</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Plus+Jakarta+Sans:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Edufarmers Data Hub - Admin Prototype</title>
     
-    <script>
+    <!-- Scripts & Stylesheets -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    
+    <!-- React & Router Global Dependencies -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
+    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
                 extend: {
                     "colors": {
-                        "surface-container-high": "#dce9ff",
-                        "on-primary": "#ffffff",
-                        "surface-container-low": "#eff4ff",
-                        "primary-fixed-dim": "#ffb4ab",
-                        "on-surface-variant": "#5b403d",
-                        "text-main": "#1F2937",
-                        "on-tertiary-fixed": "#001c37",
-                        "outline-variant": "#e4beb9",
-                        "on-tertiary-container": "#c1dbff",
-                        "info-blue": "#0284C7",
-                        "tertiary": "#00497f",
-                        "on-secondary-fixed-variant": "#5c4300",
-                        "tertiary-container": "#0061a6",
-                        "on-primary-fixed": "#410002",
-                        "inverse-on-surface": "#eaf1ff",
-                        "surface-tint": "#b91c1c",
-                        "inverse-surface": "#233144",
-                        "outline": "#8f6f6c",
-                        "primary-fixed": "#ffdad6",
-                        "on-primary-fixed-variant": "#93000b",
-                        "secondary": "#795900",
-                        "on-surface": "#0d1c2e",
-                        "surface-cream": "#FDFBF7",
-                        "border-slate": "#E2E8F0",
-                        "secondary-fixed-dim": "#f9bd22",
-                        "primary": "#b91c1c",
-                        "on-tertiary-fixed-variant": "#00497e",
-                        "tertiary-fixed-dim": "#a0caff",
-                        "inverse-primary": "#ffb4ab",
-                        "surface": "#f8f9ff",
-                        "error": "#ba1a1a",
-                        "background": "#f8f9ff",
-                        "on-secondary-container": "#6f5100",
-                        "on-secondary": "#ffffff",
-                        "surface-container": "#e6eeff",
-                        "on-secondary-fixed": "#261a00",
-                        "error-container": "#ffdad6",
-                        "surface-dim": "#ccdbf3",
+                        "primary-fixed-dim": "#99d2c3",
+                        "brand-orange": "#F37021",
                         "on-tertiary": "#ffffff",
-                        "success-green": "#059669",
-                        "tertiary-fixed": "#d2e4ff",
-                        "primary-container": "#b91c1c",
-                        "on-primary-container": "#ffcdc7",
-                        "on-error": "#ffffff",
-                        "surface-variant": "#d5e3fc",
-                        "secondary-container": "#ffc329",
-                        "secondary-fixed": "#ffdf9f",
+                        "secondary": "#a04100",
+                        "on-primary-fixed-variant": "#135044",
+                        "brand-red": "#C82227",
+                        "tertiary-container": "#5d2e22",
+                        "outline": "#707976",
+                        "surface-bright": "#f8f9fa",
+                        "tertiary-fixed": "#ffdad2",
+                        "on-surface-variant": "#404946",
+                        "surface-variant": "#e1e3e4",
+                        "surface-dim": "#d9dadb",
+                        "on-tertiary-fixed": "#350f06",
+                        "on-surface": "#191c1d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container": "#edeeef",
+                        "tertiary-fixed-dim": "#fdb5a4",
+                        "surface": "#f8f9fa",
+                        "on-background": "#191c1d",
                         "surface-container-lowest": "#ffffff",
-                        "on-background": "#0d1c2e",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#002c24",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#ffdbcb",
+                        "on-tertiary-fixed-variant": "#6b392c",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#d89584",
+                        "secondary-fixed-dim": "#ffb693",
+                        "inverse-surface": "#2e3132",
+                        "on-secondary": "#ffffff",
+                        "primary-fixed": "#b4eede",
+                        "on-primary": "#ffffff",
+                        "on-primary-fixed": "#00201a",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "on-secondary-container": "#5d2300",
                         "on-error-container": "#93000a",
-                        "surface-container-highest": "#d5e3fc",
-                        "surface-bright": "#f8f9ff"
+                        "text-main": "#1A1C1B",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-secondary-fixed": "#341000",
+                        "tertiary": "#42190f",
+                        "surface-tint": "#30685b",
+                        "outline-variant": "#bfc9c4",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-container": "#fc7728",
+                        "primary-container": "#004439",
+                        "background": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "inverse-primary": "#99d2c3",
+                        "brand-deep-green": "#004439",
+                        "surface-muted": "#F0F2F1",
+                        "on-primary-container": "#78b1a2"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -73,111 +84,127 @@
                         "full": "0.75rem"
                     },
                     "spacing": {
-                        "stack-sm": "8px",
-                        "container-max": "1440px",
-                        "margin-mobile": "16px",
-                        "gutter": "24px",
-                        "sidebar-width": "280px",
-                        "stack-md": "16px",
-                        "stack-lg": "32px"
+                        "sm": "12px",
+                        "lg": "24px",
+                        "xxs": "4px",
+                        "sidebar-width": "260px",
+                        "xs": "8px",
+                        "base": "4px",
+                        "md": "16px",
+                        "gutter": "20px",
+                        "xl": "32px"
                     },
                     "fontFamily": {
-                        "stat-value": ["Plus Jakarta Sans"],
-                        "body-lg": ["Inter"],
-                        "headline-lg": ["Plus Jakarta Sans"],
-                        "label-caps": ["Inter"],
-                        "headline-md": ["Plus Jakarta Sans"],
-                        "body-md": ["Inter"],
-                        "table-header": ["Inter"]
-                    },
-                    "fontSize": {
-                        "stat-value": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
-                        "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "headline-lg": ["30px", {"lineHeight": "38px", "fontWeight": "700"}],
-                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600"}],
-                        "headline-md": ["20px", {"lineHeight": "28px", "fontWeight": "600"}],
-                        "body-md": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
-                        "table-header": ["12px", {"lineHeight": "16px", "fontWeight": "600"}]
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "label-md": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "title-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"]
                     }
-                },
-            },
+                }
+            }
         }
     </script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
             vertical-align: middle;
         }
-        ::-webkit-scrollbar { width: 6px; height: 6px; }
-        ::-webkit-scrollbar-track { background: transparent; }
-        ::-webkit-scrollbar-thumb { background: #E2E8F0; border-radius: 10px; }
-        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
-        body { font-family: 'Inter', sans-serif; }
-        h1, h2, h3, h4, .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+        body {
+            font-family: 'Hanken Grotesk', sans-serif !important;
+            background-color: #F8F9FA;
+            min-height: 100vh;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid #E0E4E2;
+        }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #bfc9c4; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #707976; }
+        
+        .processing-pulse { animation: pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite; }
+        @keyframes pulse-slow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
-</head>
-<body>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-surface">
     <div id="root"></div>
-
-    <!-- Dependencies -->
-    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
-    <script src="https://unpkg.com/history@5/umd/history.development.js"></script>
-    <script src="https://unpkg.com/react-router@6.3.0/umd/react-router.development.js"></script>
-    <script src="https://unpkg.com/react-router-dom@6.3.0/umd/react-router-dom.development.js"></script>
-    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
     <script type="text/babel">
         const { useState, useEffect } = React;
         const { createRoot } = ReactDOM;
         const { MemoryRouter, Routes, Route, Link, useNavigate, useLocation } = ReactRouterDOM;
 
-        // --- Common Components ---
+        // --- Shared Components ---
 
-        const Sidebar = () => {
+        const NavigationDrawer = () => {
             const location = useLocation();
             const isActive = (path) => location.pathname === path;
 
             const navItems = [
-                { path: '/', label: 'Dashboard', icon: 'dashboard' },
-                { path: '/upload', label: 'Upload Center', icon: 'upload_file' },
-                { path: '/records', label: 'Data Records', icon: 'storage' },
-                { path: '/history', label: 'History', icon: 'history' },
-                { path: '#', label: 'Settings', icon: 'settings' }
+                { path: '/', icon: 'dashboard', label: 'Dashboard' },
+                { path: '/file-processing', icon: 'upload_file', label: 'File Processing' },
+                { path: '/operations', icon: 'agriculture', label: 'Operations' },
+                { path: '/nutrition', icon: 'restaurant', label: 'Nutrition' },
+                { path: '/supply-chain', icon: 'local_shipping', label: 'Supply Chain' },
+                { path: '/settings', icon: 'settings', label: 'Settings' }
             ];
 
             return (
-                <aside className="fixed left-0 top-0 h-full w-[280px] bg-surface-container-lowest border-r border-border-slate flex flex-col py-8 z-50 overflow-y-auto">
-                    <div className="px-6 mb-10">
-                        <h1 className="text-headline-md font-bold text-primary">FFI Backoffice</h1>
-                        <p className="text-label-caps text-on-surface-variant mt-1 uppercase tracking-wider">Precision Agriculture</p>
-                    </div>
-                    <nav className="flex-1 space-y-1">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.label}
-                                to={item.path}
-                                className={`flex items-center gap-3 px-6 py-3 transition-all duration-200 ${
-                                    isActive(item.path)
-                                        ? 'text-primary font-bold border-l-4 border-primary bg-surface-container'
-                                        : 'text-on-surface-variant hover:text-primary hover:bg-surface-container-high'
-                                }`}
-                            >
-                                <span className="material-symbols-outlined">{item.icon}</span>
-                                <span className="text-label-caps">{item.label}</span>
-                            </Link>
-                        ))}
-                    </nav>
-                    <div className="px-6 mt-auto">
-                        <div className="flex items-center gap-3 p-3 bg-surface-container-low rounded-lg border border-border-slate">
-                            <img 
-                                alt="Admin Profile" 
-                                className="w-10 h-10 rounded-full border border-border-slate shadow-sm object-cover" 
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTux91ChaoHx7f5PNCaIJZkF5Yl5n7XZi2np85pZrRBaKNeuiBDQldOWiJ0UqnRnHP-qkwxtKl06Oew4liHuIGByz48yeNIMXk8YLrDeoBf2LOP4PbxKF9G2T7g_B3rQZHhHWj1ok4LGA7wPujNTSY2guqNlH73CEMAUMbiNNU8LVgKvpSA8pjfPlfTY-SUXiQ-unFMlLTPaifPsJSAR20Sk-GO_qvOA3iaKRZmQAt0FngCJNk7xA97HS3eGbJmpYiMDy8l5CWFc"
-                            />
-                            <div className="overflow-hidden">
-                                <p className="text-body-md font-bold truncate">Admin User</p>
-                                <p className="text-[10px] text-on-surface-variant truncate uppercase tracking-tighter">Master Admin</p>
+                <aside className="fixed inset-y-0 left-0 z-50 overflow-y-auto w-[260px] h-full bg-surface-container-lowest dark:bg-inverse-surface border-r border-outline-variant dark:border-outline">
+                    <div className="p-lg flex flex-col h-full">
+                        <div className="mb-xl">
+                            <span className="text-20px font-black text-brand-deep-green dark:text-primary-fixed-dim">EDUFARMERS</span>
+                            <p className="text-[12px] font-medium text-on-surface-variant">Data Hub Admin</p>
+                        </div>
+                        
+                        <div className="flex items-center gap-md p-md mb-xl bg-surface-muted dark:bg-surface-container-highest rounded-lg">
+                            <div className="w-10 h-10 rounded-full bg-brand-deep-green flex items-center justify-center text-white font-bold">EA</div>
+                            <div>
+                                <h3 className="text-[12px] font-bold text-on-surface">Edufarmers Admin</h3>
+                                <p className="text-[11px] text-on-surface-variant">Phase 1 Active</p>
+                            </div>
+                        </div>
+
+                        <nav className="flex-1 space-y-xs">
+                            {navItems.map((item) => (
+                                <Link 
+                                    key={item.path}
+                                    to={item.path}
+                                    className={`flex items-center gap-md py-sm px-md transition-colors duration-200 ${
+                                        isActive(item.path) 
+                                        ? 'border-l-4 border-brand-orange text-brand-deep-green dark:text-primary-fixed-dim font-bold bg-surface-muted dark:bg-surface-container-highest'
+                                        : 'text-on-surface-variant dark:text-surface-variant hover:bg-surface-container dark:hover:bg-surface-container-high'
+                                    }`}
+                                >
+                                    <span className="material-symbols-outlined">{item.icon}</span>
+                                    <span className="text-[12px]">{item.label}</span>
+                                </Link>
+                            ))}
+                        </nav>
+                        
+                        <div className="mt-auto pt-lg border-t border-outline-variant flex items-center gap-md">
+                            <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center overflow-hidden">
+                                <span className="material-symbols-outlined text-brand-deep-green" style={{fontVariationSettings: "'FILL' 1"}}>account_circle</span>
+                            </div>
+                            <div>
+                                <p className="text-[12px] font-bold text-on-surface">Edufarmers Admin</p>
+                                <p className="text-[10px] text-on-surface-variant uppercase tracking-wider">Phase 1 Active</p>
                             </div>
                         </div>
                     </div>
@@ -185,117 +212,459 @@
             );
         };
 
-        const TopBar = ({ placeholder = "Search records, units, or categories..." }) => (
-            <header className="fixed top-0 right-0 left-[280px] h-16 bg-surface border-b border-border-slate flex justify-between items-center px-8 z-40">
-                <div className="flex items-center flex-1 max-w-xl">
-                    <div className="relative w-full">
-                        <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
-                        <input 
-                            className="w-full bg-surface-container-low border-none rounded-lg pl-10 pr-4 py-2 text-body-md focus:ring-2 focus:ring-primary/20 transition-all" 
-                            placeholder={placeholder}
-                            type="text"
-                        />
-                    </div>
+        const TopAppBar = ({ title }) => (
+            <header className="w-full h-16 sticky top-0 z-40 flex justify-between items-center px-lg bg-surface dark:bg-on-background border-b border-outline-variant dark:border-outline">
+                <div className="flex items-center gap-md">
+                    <button className="material-symbols-outlined text-brand-deep-green md:hidden">menu</button>
+                    <h1 className="text-[24px] font-bold text-brand-deep-green dark:text-primary-fixed-dim">{title}</h1>
                 </div>
-                <div className="flex items-center gap-4 ml-8">
-                    <button className="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors rounded-full relative">
-                        <span className="material-symbols-outlined">notifications</span>
-                        <span className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full"></span>
-                    </button>
-                    <button className="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors rounded-full">
-                        <span className="material-symbols-outlined">help</span>
-                    </button>
+                <div className="flex items-center gap-lg">
+                    <div className="hidden md:flex items-center gap-xs px-sm py-xs bg-surface-container-low rounded-lg border border-outline-variant">
+                        <span className="material-symbols-outlined text-outline">search</span>
+                        <input className="bg-transparent border-none focus:ring-0 text-[14px] text-on-surface" placeholder="Search data..." type="text" />
+                    </div>
+                    <div className="flex items-center gap-sm">
+                        <span className="material-symbols-outlined text-on-surface-variant">notifications</span>
+                        <span className="material-symbols-outlined text-brand-deep-green" style={{fontVariationSettings: "'FILL' 1"}}>account_circle</span>
+                    </div>
                 </div>
             </header>
         );
 
+        const Footer = () => (
+            <footer className="flex justify-between items-center px-xl py-md mt-auto bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant dark:border-outline">
+                <div className="flex flex-col gap-xxs">
+                    <p className="font-bold text-brand-deep-green">Edufarmers</p>
+                    <p className="text-[11px] text-on-surface-variant">© 2024 Edufarmers. All Rights Reserved. AI-Powered Agricultural Data Systems.</p>
+                </div>
+                <div className="flex gap-lg">
+                    <a className="text-[11px] text-on-surface-variant hover:text-brand-deep-green underline" href="#">Documentation</a>
+                    <a className="text-[11px] text-on-surface-variant hover:text-brand-deep-green underline" href="#">Privacy Policy</a>
+                    <a className="text-[11px] text-on-surface-variant hover:text-brand-deep-green underline" href="#">System Status</a>
+                </div>
+            </footer>
+        );
+
         // --- Page Components ---
 
-        const DashboardPage = () => (
-            <div className="ml-[280px] mt-16 p-8 min-h-screen">
-                <div className="max-w-container-max mx-auto">
-                    <header className="mb-8 flex justify-between items-end">
-                        <div>
-                            <h2 className="text-headline-lg font-bold text-on-surface">System Overview</h2>
-                            <p className="text-body-lg text-on-surface-variant">Real-time agricultural logistics and portion tracking.</p>
+        const DashboardPage = () => {
+            const navigate = useNavigate();
+            return (
+                <div className="ml-[260px] min-h-screen flex flex-col">
+                    <TopAppBar title="Edufarmers Data Hub" />
+                    <main className="p-xl flex-1">
+                        <div className="flex flex-col md:flex-row md:items-end justify-between mb-xl gap-md">
+                            <div>
+                                <h2 className="text-[32px] font-semibold text-brand-deep-green">Dashboard Overview</h2>
+                                <p className="text-[14px] text-on-surface-variant">Administrative summary of Phase 1 operations and logistics.</p>
+                            </div>
+                            <div className="flex gap-md">
+                                <button className="bg-surface-container-lowest border border-brand-deep-green text-brand-deep-green px-lg py-sm text-[12px] font-medium rounded-lg flex items-center gap-xs hover:bg-surface-muted transition-all">
+                                    <span className="material-symbols-outlined">download</span> Export Report
+                                </button>
+                                <button 
+                                    onClick={() => navigate('/file-processing')}
+                                    className="bg-brand-orange text-white px-lg py-sm text-[12px] font-medium rounded-lg flex items-center gap-xs shadow-md hover:scale-105 transition-transform"
+                                >
+                                    <span className="material-symbols-outlined">upload_file</span> Quick File Upload
+                                </button>
+                            </div>
                         </div>
-                        <div className="flex gap-3">
-                            <button className="px-4 py-2 border border-border-slate text-on-surface font-semibold flex items-center gap-2 hover:bg-surface-container-low transition-colors rounded">
-                                <span className="material-symbols-outlined text-[18px]">download</span> Export Report
-                            </button>
-                            <button className="px-4 py-2 bg-primary text-on-primary font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity rounded shadow-sm">
-                                <span className="material-symbols-outlined text-[18px]">add</span> New Entry
-                            </button>
-                        </div>
-                    </header>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div className="bg-white border border-border-slate p-6 rounded-xl shadow-sm flex flex-col justify-between">
-                            <div>
-                                <p className="text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">Total Portions Served</p>
-                                <h3 className="text-stat-value text-primary">610,482</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter mb-xl">
+                            <div className="md:col-span-4 glass-card p-lg rounded-xl flex flex-col justify-between">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Operational Status</p>
+                                        <h3 className="text-[24px] font-bold text-brand-deep-green mt-xs">Active</h3>
+                                    </div>
+                                    <div className="bg-primary-fixed-dim/20 p-sm rounded-full text-brand-deep-green">
+                                        <span className="material-symbols-outlined">check_circle</span>
+                                    </div>
+                                </div>
+                                <div className="mt-xl">
+                                    <div className="flex justify-between text-[11px] text-on-surface-variant mb-xs">
+                                        <span>Uptime</span>
+                                        <span>99.8%</span>
+                                    </div>
+                                    <div className="w-full bg-surface-muted h-2 rounded-full overflow-hidden">
+                                        <div className="bg-brand-deep-green h-full w-[99.8%]"></div>
+                                    </div>
+                                </div>
                             </div>
-                            <div className="mt-4 flex items-center gap-2 text-success-green font-semibold">
-                                <span className="material-symbols-outlined text-[18px]">trending_up</span>
-                                <span className="text-body-md">+12.4% from last month</span>
+                            <div className="md:col-span-4 glass-card p-lg rounded-xl border-l-4 border-l-brand-orange">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Total Schools Served</p>
+                                        <h3 className="text-[48px] font-bold text-brand-deep-green leading-none my-md">142</h3>
+                                    </div>
+                                    <div className="bg-brand-orange/10 p-sm rounded-full text-brand-orange">
+                                        <span className="material-symbols-outlined">school</span>
+                                    </div>
+                                </div>
+                                <p className="text-[14px] text-brand-deep-green font-bold">+12% from last month</p>
+                            </div>
+                            <div className="md:col-span-4 glass-card p-lg rounded-xl">
+                                <div className="flex justify-between items-start">
+                                    <div>
+                                        <p className="text-[11px] font-semibold uppercase tracking-wider text-on-surface-variant">Total Beneficiaries</p>
+                                        <h3 className="text-[48px] font-bold text-brand-deep-green leading-none my-md">12,450</h3>
+                                    </div>
+                                    <div className="bg-secondary-fixed p-sm rounded-full text-secondary">
+                                        <span className="material-symbols-outlined">groups</span>
+                                    </div>
+                                </div>
+                                <p className="text-[14px] text-on-surface-variant">Students & community members</p>
                             </div>
                         </div>
-                        <div className="bg-white border border-border-slate p-6 rounded-xl shadow-sm flex flex-col justify-between">
-                            <div>
-                                <p className="text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">Total Beneficiaries</p>
-                                <h3 className="text-stat-value text-on-surface">2,542</h3>
-                            </div>
-                            <div className="mt-4 flex items-center gap-2 text-on-surface-variant font-medium">
-                                <span className="material-symbols-outlined text-[18px]">school</span>
-                                <span className="text-body-md">Across all regions</span>
-                            </div>
-                        </div>
-                        <div className="bg-white border border-border-slate p-6 rounded-xl shadow-sm flex flex-col justify-between">
-                            <div>
-                                <p className="text-label-caps text-on-surface-variant uppercase tracking-widest mb-2">Active Schools</p>
-                                <h3 className="text-stat-value text-secondary">9</h3>
-                            </div>
-                            <div className="mt-4 flex items-center gap-2 text-error font-semibold">
-                                <span className="material-symbols-outlined text-[18px]">warning</span>
-                                <span className="text-body-md">2 Schools pending audit</span>
-                            </div>
-                        </div>
-                    </div>
 
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
-                        <div className="lg:col-span-8 bg-white border border-border-slate rounded-xl overflow-hidden shadow-sm">
-                            <div className="px-6 py-4 border-b border-border-slate flex justify-between items-center">
-                                <h3 className="text-headline-md font-bold text-on-surface">Recent Activity</h3>
-                                <Link to="/records" className="text-primary font-semibold text-body-md hover:underline">View All</Link>
+                        <div className="glass-card rounded-xl overflow-hidden mb-xl">
+                            <div className="px-lg py-md border-b border-outline-variant flex justify-between items-center">
+                                <h4 className="text-[20px] font-bold text-brand-deep-green">Operational Metrics Log</h4>
+                                <div className="flex gap-sm">
+                                    <button className="material-symbols-outlined text-on-surface-variant">filter_list</button>
+                                    <button className="material-symbols-outlined text-on-surface-variant">more_vert</button>
+                                </div>
                             </div>
                             <div className="overflow-x-auto">
                                 <table className="w-full text-left">
-                                    <thead className="bg-slate-50 border-b border-border-slate">
+                                    <thead className="bg-surface-muted">
                                         <tr>
-                                            <th className="px-6 py-4 text-table-header text-on-surface-variant uppercase">Filename</th>
-                                            <th className="px-6 py-4 text-table-header text-on-surface-variant uppercase">School</th>
-                                            <th className="px-6 py-4 text-table-header text-on-surface-variant uppercase">Date</th>
-                                            <th className="px-6 py-4 text-table-header text-on-surface-variant uppercase">Status</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Metric ID</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Data Component</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Priority</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Phase 1 Status</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase text-right">Last Updated</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-border-slate">
+                                    <tbody className="divide-y divide-outline-variant">
                                         {[
-                                            { file: 'portion_report_v2.xlsx', school: 'Central Jakarta Elementary 01', date: 'Oct 24, 2023', status: 'Verified', color: 'success-green' },
-                                            { file: 'logistics_log_north.csv', school: 'North Bandung Secondary', date: 'Oct 23, 2023', status: 'Processing', color: 'secondary' },
-                                            { file: 'inventory_audit_q3.xlsx', school: 'Surabaya Primary 04', date: 'Oct 21, 2023', status: 'Verified', color: 'success-green' },
-                                            { file: 'daily_serving_list.pdf', school: 'East Medan Vocational', date: 'Oct 20, 2023', status: 'Failed', color: 'error' }
-                                        ].map((row, i) => (
-                                            <tr key={i} className="hover:bg-surface-container-low transition-colors">
-                                                <td className="px-6 py-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <span className="material-symbols-outlined text-info-blue">description</span>
-                                                        <span className="text-body-md font-semibold text-on-surface">{row.file}</span>
+                                            {id: 'A-01', comp: 'Status Dapur (Operational Status)', priority: 'HIGH', status: 'Verified', time: '2 hours ago', pColor: 'bg-brand-red/10 text-brand-red', sColor: 'bg-brand-deep-green'},
+                                            {id: 'B-01', comp: 'Menu Nutrisi (Nutrition Plan)', priority: 'HIGH', status: 'Verified', time: 'Today, 08:30', pColor: 'bg-brand-red/10 text-brand-red', sColor: 'bg-brand-deep-green'},
+                                            {id: 'C-02', comp: 'Total Pemasok Aktif (Active Suppliers)', priority: 'MED', status: 'Pending Review', time: 'Yesterday', pColor: 'bg-secondary-container/10 text-secondary-fixed-dim', sColor: 'bg-brand-orange'},
+                                            {id: 'D-15', comp: 'Status Rekonsiliasi Bank', priority: 'HIGH', status: 'Delayed', time: '3 days ago', pColor: 'bg-brand-red/10 text-brand-red', sColor: 'bg-error'},
+                                        ].map((row, idx) => (
+                                            <tr key={idx} className="hover:bg-surface-muted transition-colors cursor-pointer">
+                                                <td className="px-lg py-sm text-[12px] text-on-surface-variant">{row.id}</td>
+                                                <td className="px-lg py-sm text-[14px] text-on-surface font-bold">{row.comp}</td>
+                                                <td className="px-lg py-sm"><span className={`px-xs py-1 ${row.pColor} text-[11px] font-semibold rounded`}>{row.priority}</span></td>
+                                                <td className="px-lg py-sm">
+                                                    <div className="flex items-center gap-xs text-[12px] text-on-surface">
+                                                        <span className={`w-2 h-2 rounded-full ${row.sColor}`}></span> {row.status}
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4 text-body-md text-on-surface-variant">{row.school}</td>
-                                                <td className="px-6 py-4 text-body-md text-on-surface-variant">{row.date}</td>
-                                                <td className="px-6 py-4">
-                                                    <span className={`px-2 py-1 rounded-full text-[10px] font-bold uppercase border border-current ${row.status === 'Verified' ? 'bg-green-50 text-success-green' : row.status === 'Processing' ? 'bg-yellow-50 text-secondary' : 'bg-red-50 text-error'}`}>
+                                                <td className="px-lg py-sm text-right text-[11px] text-on-surface-variant">{row.time}</td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const FileProcessingPage = () => {
+            return (
+                <div className="ml-[260px] min-h-screen flex flex-col">
+                    <TopAppBar title="File Processing Hub" />
+                    <main className="p-xl flex-grow max-w-7xl mx-auto w-full">
+                        <section className="mb-xl grid grid-cols-1 md:grid-cols-3 gap-lg">
+                            <div className="col-span-2 bg-brand-deep-green p-lg text-white rounded-lg shadow-sm flex items-center justify-between overflow-hidden relative">
+                                <div className="relative z-10">
+                                    <h3 className="text-[24px] font-bold mb-xs">Intelligent Data Extraction</h3>
+                                    <p className="text-[14px] opacity-90 max-w-md">Our AI system automatically parses agricultural reports, supply logs, and nutrition manifests with 99.8% accuracy.</p>
+                                </div>
+                                <span className="material-symbols-outlined text-[120px] opacity-10 absolute right-[-20px] top-[-20px]">psychology</span>
+                            </div>
+                            <div className="bg-white border border-outline-variant p-lg rounded-lg flex flex-col justify-center">
+                                <p className="text-[12px] text-on-surface-variant mb-xxs uppercase tracking-wider">Processing Efficiency</p>
+                                <p className="text-[48px] font-bold text-brand-orange">1.2s</p>
+                                <p className="text-[14px] text-on-surface-variant">Average extraction time per document</p>
+                            </div>
+                        </section>
+
+                        <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg items-start">
+                            <div className="lg:col-span-7 bg-white border border-outline-variant rounded-lg p-lg shadow-sm">
+                                <div className="mb-md">
+                                    <h4 className="text-[20px] font-bold text-brand-deep-green">Upload New Document</h4>
+                                    <p className="text-on-surface-variant text-[14px]">Supported formats: PDF, DOCX, XLSX, CSV, JPG</p>
+                                </div>
+                                <div className="border-2 border-dashed border-outline-variant rounded-xl p-xl flex flex-col items-center justify-center bg-surface-muted hover:bg-white hover:border-brand-deep-green transition-all cursor-pointer group min-h-[300px]">
+                                    <div className="w-16 h-16 rounded-full bg-brand-deep-green/5 flex items-center justify-center mb-md group-hover:scale-110 transition-transform">
+                                        <span className="material-symbols-outlined text-brand-deep-green text-[48px]">cloud_upload</span>
+                                    </div>
+                                    <h5 className="text-[20px] font-bold text-on-surface mb-xs">Drag and drop files here</h5>
+                                    <p className="text-on-surface-variant mb-xl">or click to browse your local storage</p>
+                                    <button className="bg-brand-deep-green text-white px-xl py-md rounded-lg font-bold text-[12px] hover:bg-primary-container transition-colors flex items-center gap-sm shadow-sm">
+                                        <span className="material-symbols-outlined">add_circle</span> CHOOSE FILE
+                                    </button>
+                                </div>
+                            </div>
+                            <div className="lg:col-span-5 space-y-lg">
+                                <div className="bg-white border border-outline-variant rounded-lg overflow-hidden shadow-sm">
+                                    <div className="p-md bg-surface-container border-b border-outline-variant flex justify-between items-center">
+                                        <h4 className="text-[12px] text-brand-deep-green font-bold uppercase tracking-widest">Processing Status</h4>
+                                        <span className="text-[10px] bg-brand-orange text-white px-xs py-xxs rounded-full font-bold">LIVE</span>
+                                    </div>
+                                    <div className="p-lg space-y-lg">
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-md">
+                                                <div className="w-2 h-2 rounded-full bg-brand-deep-green"></div>
+                                                <span className="text-[14px] text-on-surface">Queue Healthy</span>
+                                            </div>
+                                            <span className="text-on-surface-variant text-xs">99% uptime</span>
+                                        </div>
+                                        <div className="flex items-center justify-between">
+                                            <div className="flex items-center gap-md">
+                                                <div className="w-2 h-2 rounded-full bg-brand-orange processing-pulse"></div>
+                                                <span className="text-[14px] text-on-surface">Current Active Jobs</span>
+                                            </div>
+                                            <span className="text-on-surface font-bold text-xs">4 Files</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const OperationsPage = () => {
+            return (
+                <div className="ml-[260px] min-h-screen flex flex-col">
+                    <TopAppBar title="Operations & Nutrition Hub" />
+                    <main className="p-xl space-y-xl max-w-[1400px]">
+                        <section className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+                            <div className="md:col-span-2 bg-surface-container-lowest border border-outline-variant p-lg rounded-lg">
+                                <div className="flex justify-between items-center mb-lg">
+                                    <h2 className="text-[20px] font-bold text-brand-deep-green">Kitchen Operational Status</h2>
+                                    <span className="bg-primary-fixed-dim/30 text-brand-deep-green px-md py-xxs rounded-full text-[11px] font-bold flex items-center gap-xs">
+                                        <span className="w-2 h-2 rounded-full bg-brand-deep-green animate-pulse"></span> ACTIVE
+                                    </span>
+                                </div>
+                                <div className="grid grid-cols-2 sm:grid-cols-4 gap-md">
+                                    {[
+                                        {label: 'Operating Hours', val: '06:00 - 14:00'},
+                                        {label: 'Schools Served', val: '12 Units'},
+                                        {label: 'Total Portions', val: '1,450/day'},
+                                        {label: 'Staff Count', val: '24 Members'}
+                                    ].map((stat, i) => (
+                                        <div key={i} className="p-md bg-surface-muted rounded">
+                                            <p className="text-[11px] text-on-surface-variant uppercase mb-base">{stat.label}</p>
+                                            <p className="text-[16px] font-bold text-brand-deep-green">{stat.val}</p>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="bg-surface-container-lowest border border-outline-variant p-lg rounded-lg flex flex-col justify-center relative overflow-hidden">
+                                <div className="z-10">
+                                    <h3 className="text-[12px] font-bold text-on-surface-variant mb-xs">Kitchen Location</h3>
+                                    <p className="text-[24px] font-bold text-brand-deep-green">Central Dapur - Bandung</p>
+                                    <p className="text-[14px] text-on-surface-variant">Jl. Agricola No. 88, Kec. Sukajadi</p>
+                                </div>
+                                <div className="absolute right-[-20px] bottom-[-20px] opacity-10">
+                                    <span className="material-symbols-outlined text-[120px]">restaurant</span>
+                                </div>
+                            </div>
+                        </section>
+
+                        <section className="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm">
+                            <div className="px-lg py-md border-b border-outline-variant bg-surface-muted/50 flex justify-between items-center">
+                                <h3 className="text-[20px] font-bold text-brand-deep-green">Operational Efficiency Tracking</h3>
+                                <div className="flex gap-sm">
+                                    <span className="flex items-center gap-xs text-[12px] text-on-surface-variant">
+                                        <span className="w-2 h-2 rounded-full bg-brand-orange"></span> Priority: High
+                                    </span>
+                                </div>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left border-collapse">
+                                    <thead className="bg-surface-muted">
+                                        <tr>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">ID</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Data Component</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Description</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Source</th>
+                                            <th className="px-lg py-sm text-[11px] text-on-surface-variant uppercase">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-outline-variant">
+                                        {[
+                                            {id: 'A-01', comp: 'Status Dapur', desc: 'Status operasional saat ini: AKTIF, PERSIAPAN, atau TIDAK AKTIF', source: 'Manual (CMS)', status: 'Verified'},
+                                            {id: 'A-04', comp: 'Jam Operasional', desc: 'Jam buka-tutup dapur (Contoh: 06:00 — 14:00)', source: 'Manual (CMS)', status: 'Verified'},
+                                            {id: 'A-12', comp: 'Total Porsi Hari Ini', desc: 'Jumlah porsi yang diproduksi pada hari berjalan', source: 'Runchise (real-time)', status: 'Live'}
+                                        ].map((row, i) => (
+                                            <tr key={i} className="hover:bg-surface-muted/30 transition-colors">
+                                                <td className="px-lg py-md text-[12px] font-bold text-brand-deep-green">{row.id}</td>
+                                                <td className="px-lg py-md text-[14px] font-semibold">{row.comp}</td>
+                                                <td className="px-lg py-md text-[14px] text-on-surface-variant">{row.desc}</td>
+                                                <td className="px-lg py-md text-[11px] text-secondary font-bold">{row.source}</td>
+                                                <td className="px-lg py-md">
+                                                    <span className="bg-green-100 text-green-800 text-[10px] font-bold px-sm py-0.5 rounded uppercase">{row.status}</span>
+                                                </td>
+                                            </tr>
+                                        ))}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </section>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const NutritionPage = () => {
+            return (
+                <div className="ml-[260px] min-h-screen flex flex-col">
+                    <TopAppBar title="Nutrition Intelligence" />
+                    <main className="p-xl space-y-xl max-w-[1400px]">
+                        <section>
+                            <div className="flex items-end justify-between mb-lg">
+                                <div>
+                                    <p className="text-[12px] font-bold text-brand-orange uppercase">Nutrition Focus</p>
+                                    <h2 className="text-[24px] font-bold text-brand-deep-green">Today's Menu: Daging Sei Timor</h2>
+                                </div>
+                                <p className="text-[14px] text-on-surface-variant">Wednesday, 22 May 2024</p>
+                            </div>
+                            <div className="grid grid-cols-12 gap-5">
+                                <div className="col-span-12 md:col-span-5 h-[400px] rounded-xl overflow-hidden relative group">
+                                    <img alt="Daging Sei Timor" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCT3yq-CLJJ2buc5sDg3a9iyzomSbtSSF_hsZz5jHIAsaq55eAepWJvTJqQLinHtxgrMt8SG8DxyfolvxiphIjQ_iZrDUKAu4m5PqyYofe6l86fLl3fAA4Sab5z29WxaajTlCgwLzqao-iTG_S6lkRNqiY6WSn8UGVygSZXsS4q-XQAuIcUTv5hQmHU1TVT225DpYA2IRQgEn8E78V2WY7Y-3DYb8yhpwmFaTbTn7lk4fMlWn9U2Anv8jYvpb_6HmHy3p70BBxkkHoq" />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-brand-deep-green/60 to-transparent"></div>
+                                    <div className="absolute bottom-lg left-lg">
+                                        <span className="bg-brand-orange text-white text-[11px] font-bold px-md py-xxs rounded-full">RECOMMENDED</span>
+                                    </div>
+                                </div>
+                                <div className="col-span-12 md:col-span-4 grid grid-cols-2 gap-gutter">
+                                    <div className="col-span-2 bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+                                        <h4 className="text-[11px] font-bold text-on-surface-variant uppercase mb-md">Daily Calorie Target</h4>
+                                        <div className="flex items-baseline gap-xs">
+                                            <span className="text-[48px] font-bold text-brand-deep-green">740</span>
+                                            <span className="text-[20px] text-on-surface-variant">kcal</span>
+                                        </div>
+                                        <div className="w-full bg-surface-muted h-2 rounded-full mt-lg overflow-hidden">
+                                            <div className="bg-brand-orange h-full w-[85%] rounded-full"></div>
+                                        </div>
+                                        <p className="text-[11px] text-on-surface-variant mt-sm">85% of recommended daily intake for Phase 1</p>
+                                    </div>
+                                    <div className="bg-white border border-outline-variant p-md rounded-xl text-center">
+                                        <p className="text-[11px] text-on-surface-variant uppercase">Protein</p>
+                                        <p className="text-[24px] font-bold text-brand-deep-green">32g</p>
+                                    </div>
+                                    <div className="bg-white border border-outline-variant p-md rounded-xl text-center">
+                                        <p className="text-[11px] text-on-surface-variant uppercase">Fat</p>
+                                        <p className="text-[24px] font-bold text-brand-deep-green">18g</p>
+                                    </div>
+                                </div>
+                                <div className="col-span-12 md:col-span-3 bg-brand-deep-green text-white p-lg rounded-xl flex flex-col">
+                                    <h4 className="text-[12px] font-bold text-primary-fixed-dim uppercase mb-lg">Menu Components</h4>
+                                    <ul className="space-y-md flex-1">
+                                        {['Daging Sei Sapi (120g)', 'Jagung Bose (180g)', 'Sayur Rumpu Rampe (100g)', 'Sambal Lu\'at (15g)'].map((c, i) => (
+                                            <li key={i} className="flex justify-between items-center border-b border-white/10 pb-xs">
+                                                <span className="text-[14px]">{c}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                    <div className="mt-lg pt-lg border-t border-white/20">
+                                        <p className="text-[11px] text-primary-fixed-dim">DATA SOURCE: RUNCHISE (AUTO)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
+
+        const SupplyChainPage = () => {
+            return (
+                <div className="ml-[260px] min-h-screen flex flex-col">
+                    <TopAppBar title="Supply Chain Hub" />
+                    <main className="p-lg space-y-lg max-w-[1400px]">
+                        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+                            <div className="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-lg rounded-lg flex flex-col justify-between">
+                                <div>
+                                    <div className="flex justify-between items-start">
+                                        <span className="text-[12px] text-on-surface-variant uppercase tracking-wider">Total Suppliers</span>
+                                        <span className="material-symbols-outlined text-brand-deep-green">groups</span>
+                                    </div>
+                                    <h2 className="text-[48px] font-bold text-brand-deep-green mt-xs">124</h2>
+                                </div>
+                                <div className="mt-md pt-md border-t border-outline-variant flex items-center justify-between">
+                                    <span className="text-green-600 text-[11px] flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[14px]">trending_up</span> +8.2% vs last month
+                                    </span>
+                                    <span className="text-on-surface-variant text-[10px] uppercase">Active Phase 1</span>
+                                </div>
+                            </div>
+                            <div className="md:col-span-4 bg-surface-container-lowest border border-outline-variant p-lg rounded-lg flex flex-col justify-between">
+                                <div>
+                                    <div className="flex justify-between items-start">
+                                        <span className="text-[12px] text-on-surface-variant uppercase tracking-wider">Commodities Tracked</span>
+                                        <span className="material-symbols-outlined text-brand-deep-green">inventory_2</span>
+                                    </div>
+                                    <h2 className="text-[48px] font-bold text-brand-deep-green mt-xs">42</h2>
+                                </div>
+                                <div className="mt-md pt-md border-t border-outline-variant flex items-center justify-between">
+                                    <span className="text-brand-orange text-[11px] flex items-center gap-1">
+                                        <span className="material-symbols-outlined text-[14px]">schedule</span> 5 Pending update
+                                    </span>
+                                    <span className="text-on-surface-variant text-[10px] uppercase">Master Data</span>
+                                </div>
+                            </div>
+                            <div className="md:col-span-4 bg-brand-orange bg-opacity-5 border border-brand-orange/30 p-lg rounded-lg relative overflow-hidden">
+                                <div className="absolute -right-4 -bottom-4 opacity-10">
+                                    <span className="material-symbols-outlined text-[120px] text-brand-orange">warning</span>
+                                </div>
+                                <div className="relative z-10">
+                                    <div className="flex justify-between items-start">
+                                        <span className="text-[12px] text-brand-orange font-bold uppercase tracking-wider">Price Alerts</span>
+                                        <span className="material-symbols-outlined text-brand-orange">priority_high</span>
+                                    </div>
+                                    <div className="mt-md">
+                                        <h2 className="text-[48px] font-bold text-brand-orange">07</h2>
+                                        <p className="text-[14px] text-brand-deep-green mt-xs">Items exceed benchmark (>15%)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div className="bg-white border border-outline-variant rounded-lg overflow-hidden flex flex-col">
+                            <div className="p-md border-b border-outline-variant flex justify-between items-center bg-surface-muted">
+                                <h3 className="text-[20px] font-bold text-brand-deep-green flex items-center gap-sm">
+                                    <span className="material-symbols-outlined">list_alt</span> Current Commodities
+                                </h3>
+                            </div>
+                            <div className="overflow-x-auto">
+                                <table className="w-full text-left border-collapse">
+                                    <thead>
+                                        <tr className="bg-surface-container-low">
+                                            <th className="py-sm px-md text-[11px] text-on-surface-variant uppercase tracking-wider border-b border-outline-variant">Commodity ID</th>
+                                            <th className="py-sm px-md text-[11px] text-on-surface-variant uppercase tracking-wider border-b border-outline-variant">Component</th>
+                                            <th className="py-sm px-md text-[11px] text-on-surface-variant uppercase tracking-wider border-b border-outline-variant">Price</th>
+                                            <th className="py-sm px-md text-[11px] text-on-surface-variant uppercase tracking-wider border-b border-outline-variant">Market Avg</th>
+                                            <th className="py-sm px-md text-[11px] text-on-surface-variant uppercase tracking-wider border-b border-outline-variant">Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody className="divide-y divide-outline-variant">
+                                        {[
+                                            {id: 'SC-B001', name: 'Beras Medium', price: 'Rp 134.500', avg: 'Rp 128.000', status: 'High (+5.1%)', sColor: 'bg-brand-orange/10 text-brand-orange'},
+                                            {id: 'SC-P005', name: 'Daging Ayam Ras', price: 'Rp 38.500', avg: 'Rp 32.000', status: 'Alert (+20%)', sColor: 'bg-brand-red/10 text-brand-red'},
+                                            {id: 'SC-F012', name: 'Minyak Goreng', price: 'Rp 14.000', avg: 'Rp 14.200', status: 'Stable', sColor: 'bg-green-100 text-green-700'}
+                                        ].map((row, i) => (
+                                            <tr key={i} className="hover:bg-surface-muted transition-colors cursor-pointer group">
+                                                <td className="py-sm px-md text-[12px] text-brand-deep-green">{row.id}</td>
+                                                <td className="py-sm px-md"><div className="font-bold text-on-surface">{row.name}</div></td>
+                                                <td className="py-sm px-md text-[12px]">{row.price}</td>
+                                                <td className="py-sm px-md text-[12px]">{row.avg}</td>
+                                                <td className="py-sm px-md">
+                                                    <span className={`inline-flex items-center px-xs py-0.5 rounded-full text-[10px] font-bold ${row.sColor} border`}>
                                                         {row.status}
                                                     </span>
                                                 </td>
@@ -305,396 +674,59 @@
                                 </table>
                             </div>
                         </div>
+                    </main>
+                    <Footer />
+                </div>
+            );
+        };
 
-                        <div className="lg:col-span-4 space-y-6">
-                            <div className="bg-white border border-border-slate p-6 rounded-xl shadow-sm">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className="material-symbols-outlined text-primary">cloud_upload</span>
-                                    <h3 className="text-headline-md font-bold text-on-surface">Quick Upload</h3>
-                                </div>
-                                <div className="border-2 border-dashed border-border-slate rounded-xl p-10 flex flex-col items-center justify-center text-center group cursor-pointer hover:border-primary hover:bg-surface-container-low transition-all duration-300">
-                                    <div className="w-16 h-16 bg-surface-container-high rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                                        <span className="material-symbols-outlined text-on-surface-variant text-[32px]">upload</span>
-                                    </div>
-                                    <p className="text-body-lg font-bold text-on-surface mb-1">Drop spreadsheet here</p>
-                                    <p className="text-body-md text-on-surface-variant opacity-70 mb-6">or browse files</p>
-                                    <button className="bg-primary text-on-primary px-6 py-2.5 rounded font-semibold text-body-md shadow-sm">Browse Files</button>
-                                </div>
+        const SettingsPage = () => (
+            <div className="ml-[260px] min-h-screen flex flex-col">
+                <TopAppBar title="System Settings" />
+                <main className="p-xl">
+                    <div className="max-w-3xl bg-white border border-outline-variant rounded-xl p-lg">
+                        <h3 className="text-[20px] font-bold text-brand-deep-green mb-lg">User Profile</h3>
+                        <div className="space-y-md">
+                            <div className="grid grid-cols-4 gap-md items-center">
+                                <label className="text-[14px] text-on-surface-variant">Full Name</label>
+                                <input type="text" className="col-span-3 rounded border-outline-variant text-[14px]" defaultValue="Edufarmers Admin" />
                             </div>
-                            <div className="bg-primary text-on-primary p-6 rounded-xl shadow-lg relative overflow-hidden group">
-                                <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white to-transparent"></div>
-                                <div className="relative z-10">
-                                    <div className="flex items-center justify-between mb-2">
-                                        <span className="text-label-caps font-bold opacity-80 uppercase">Blockchain Status</span>
-                                        <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
-                                    </div>
-                                    <h4 className="text-headline-md font-bold">Network Stable</h4>
-                                    <p className="text-body-md opacity-80 mt-1">Transaction hash verified for 98% of today's servings.</p>
-                                </div>
+                            <div className="grid grid-cols-4 gap-md items-center">
+                                <label className="text-[14px] text-on-surface-variant">Email Address</label>
+                                <input type="email" className="col-span-3 rounded border-outline-variant text-[14px]" defaultValue="admin@edufarmers.org" />
                             </div>
                         </div>
+                        <button className="mt-xl bg-brand-deep-green text-white px-lg py-sm rounded text-[12px] font-bold">Save Changes</button>
                     </div>
-                </div>
+                </main>
+                <Footer />
             </div>
         );
 
-        const UploadPage = () => (
-            <div className="ml-[280px] mt-16 p-8 min-h-screen">
-                <div className="max-w-container-max mx-auto">
-                    <div className="mb-8">
-                        <h2 className="text-headline-lg font-bold text-on-surface">Upload Center</h2>
-                        <p className="text-body-lg text-on-surface-variant max-w-2xl mt-2">Securely upload agricultural datasets. Supported formats include .docx, .xlsx, and .csv for operational precision and transparency.</p>
-                    </div>
-
-                    <div className="grid grid-cols-12 gap-8">
-                        <section className="col-span-12 lg:col-span-8 space-y-8">
-                            <div className="bg-white rounded-xl border-2 border-dashed border-border-slate hover:border-primary transition-all duration-300 p-12 flex flex-col items-center justify-center min-h-[400px] cursor-pointer">
-                                <div className="w-20 h-20 rounded-full bg-surface-container-low flex items-center justify-center mb-6">
-                                    <span className="material-symbols-outlined text-4xl text-primary">cloud_upload</span>
-                                </div>
-                                <h3 className="text-headline-md font-bold mb-2">Drag and drop files here</h3>
-                                <p className="text-on-surface-variant text-body-md mb-8">or click to browse your computer</p>
-                                <div className="flex flex-wrap justify-center gap-4 mb-8">
-                                    {['.DOCX', '.XLSX', '.CSV'].map(fmt => (
-                                        <span key={fmt} className="px-4 py-2 bg-surface border border-border-slate rounded-lg text-xs font-bold flex items-center gap-2">
-                                            <span className="material-symbols-outlined text-sm text-primary">description</span> {fmt}
-                                        </span>
-                                    ))}
-                                </div>
-                                <button className="bg-primary text-on-primary px-8 py-3 rounded-lg font-bold hover:bg-primary/90 transition-all flex items-center gap-2 shadow-sm">
-                                    <span className="material-symbols-outlined">add</span> Browse Files
-                                </button>
-                            </div>
-
-                            <div className="bg-white rounded-xl border border-border-slate overflow-hidden shadow-sm">
-                                <div className="px-6 py-4 bg-slate-50 border-b border-border-slate flex justify-between items-center">
-                                    <h4 className="text-table-header uppercase text-on-surface-variant font-bold">Files Pending Processing</h4>
-                                    <span className="text-xs font-bold bg-primary-fixed text-primary px-2 py-1 rounded">3 ACTIVE</span>
-                                </div>
-                                <div className="divide-y divide-border-slate">
-                                    {[
-                                        { name: 'Beneficiary_List_Q3_West_Java.xlsx', size: '14.2 MB', progress: '65%', icon: 'table_chart' },
-                                        { name: 'Supplier_Logs_August_2023.csv', size: '2.8 MB', progress: '32%', icon: 'article' },
-                                        { name: 'Operational_Manual_Draft.docx', size: '856 KB', progress: '98%', icon: 'description' }
-                                    ].map((file, i) => (
-                                        <div key={i} className="px-6 py-5 flex items-center gap-4 hover:bg-surface-bright transition-colors">
-                                            <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center text-primary">
-                                                <span className="material-symbols-outlined">{file.icon}</span>
-                                            </div>
-                                            <div className="flex-1">
-                                                <div className="flex justify-between items-start mb-1">
-                                                    <div>
-                                                        <p className="font-bold text-body-md">{file.name}</p>
-                                                        <p className="text-xs text-on-surface-variant">{file.size}</p>
-                                                    </div>
-                                                    <button className="text-on-surface-variant hover:text-error transition-colors flex items-center gap-1">
-                                                        <span className="material-symbols-outlined text-sm">cancel</span>
-                                                        <span className="text-xs font-bold">Cancel</span>
-                                                    </button>
-                                                </div>
-                                                <div className="w-full h-1.5 bg-surface-container rounded-full overflow-hidden mt-2">
-                                                    <div className="h-full bg-primary transition-all duration-1000" style={{ width: file.progress }}></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-                        </section>
-
-                        <aside className="col-span-12 lg:col-span-4 space-y-8">
-                            <div className="bg-surface-cream rounded-xl border border-secondary/20 p-6 shadow-sm">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <span className="material-symbols-outlined text-secondary" style={{ fontVariationSettings: "'FILL' 1" }}>info</span>
-                                    <h4 className="text-headline-md font-bold text-on-secondary-container">Data Requirements</h4>
-                                </div>
-                                <ul className="space-y-6">
-                                    {[
-                                        { title: 'Beneficiary Lists', desc: 'Must include unique ID, Name, Location, and Land Size (Hectares).' },
-                                        { title: 'Supplier Logs', desc: 'Required headers: timestamp, supplier_id, item_code, quantity.' },
-                                        { title: 'Field Reports', desc: 'Ensure all images are compressed and contain summary headers.' }
-                                    ].map((req, i) => (
-                                        <li key={i} className="flex gap-4">
-                                            <div className="flex-shrink-0 w-8 h-8 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-bold text-sm">{i+1}</div>
-                                            <div>
-                                                <p className="font-bold text-body-md mb-1">{req.title}</p>
-                                                <p className="text-xs text-on-surface-variant leading-relaxed">{req.desc}</p>
-                                            </div>
-                                        </li>
-                                    ))}
-                                </ul>
-                                <button className="w-full py-3 border border-secondary text-secondary font-bold rounded-lg hover:bg-secondary/5 mt-8 flex items-center justify-center gap-2">
-                                    <span className="material-symbols-outlined text-sm">download</span> Download Templates
-                                </button>
-                            </div>
-                            <div className="relative overflow-hidden rounded-xl h-64 border border-border-slate group shadow-md">
-                                <img className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA_f5T1OxxH1Hf0WGuskQ4tSpvMc-ElH-R91kBEr2C1GKcW0Tb-pDC34Q_Nu79nzZ_6ldjSx55sEeOfs8p3umxZ6QVCITdg7r0Fid4gGlHWJNKrhiR4BSsK2tn5F9Mp_BvuM53gMTBIQuZ7RWNqDi4ZgO3RIpsK9yz-J0YxNnSzmfngBPsvDeNxMXfuZXJkIolHbTaitceQuP2OEtF66MOHjZpD4Wxjl4Y8TNWXUCPMvpI94XwE9sIfDoat7agUae02_rCJdMRDsQQ" alt="Agri Fields" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/30 to-transparent flex flex-col justify-end p-6">
-                                    <h5 className="text-white font-bold text-lg mb-1">Secure Validation</h5>
-                                    <p className="text-white/80 text-xs">All uploaded files undergo automated AI validation to ensure 99.9% accuracy.</p>
-                                </div>
-                            </div>
-                        </aside>
-                    </div>
-                </div>
-            </div>
-        );
-
-        const RecordsPage = () => (
-            <div className="ml-[280px] mt-16 p-8 min-h-screen">
-                <div className="max-w-container-max mx-auto">
-                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
-                        <div>
-                            <h2 className="text-headline-lg font-bold text-on-surface">Data Records</h2>
-                            <p className="text-body-md text-on-surface-variant mt-1">Management and extraction overview of agricultural supply chains.</p>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <button className="flex items-center gap-2 px-4 py-2 border border-border-slate text-on-surface bg-white rounded-lg hover:bg-surface-container transition-all">
-                                <span className="material-symbols-outlined text-[20px]">filter_list</span>
-                                <span className="text-label-caps font-bold">Advanced Filter</span>
-                            </button>
-                            <button className="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg hover:opacity-90 transition-all shadow-sm">
-                                <span className="material-symbols-outlined text-[20px]">download</span>
-                                <span className="text-label-caps font-bold">Export CSV</span>
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                        {[
-                            { label: 'Total Records', val: '12,482', trend: '+12%', color: 'text-primary' },
-                            { label: 'Active Units', val: '24', detail: 'Geolocated', color: 'text-on-surface' },
-                            { label: 'Distribution Categories', val: '8', detail: 'Sectors', color: 'text-on-surface' },
-                            { label: 'Last Sync', val: '14 mins ago', detail: '', color: 'text-info-blue' }
-                        ].map((stat, i) => (
-                            <div key={i} className="bg-white p-6 border border-border-slate rounded-xl shadow-sm">
-                                <p className="text-label-caps text-on-surface-variant uppercase mb-2">{stat.label}</p>
-                                <div className="flex items-baseline gap-2">
-                                    <span className={`text-stat-value ${stat.color}`}>{stat.val}</span>
-                                    {stat.trend && <span className="text-success-green text-[10px] font-bold flex items-center"><span className="material-symbols-outlined text-[12px]">trending_up</span> {stat.trend}</span>}
-                                    {stat.detail && <span className="text-on-surface-variant text-[10px]">{stat.detail}</span>}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="bg-white border border-border-slate rounded-xl overflow-hidden shadow-sm">
-                        <div className="px-6 py-4 border-b border-border-slate flex flex-col md:flex-row items-center justify-between gap-4 bg-surface-bright">
-                            <span className="text-label-caps text-on-surface-variant">Showing 1-15 of 12,482 entries</span>
-                            <div className="flex border border-border-slate rounded-lg overflow-hidden bg-white">
-                                <button className="px-3 py-1 bg-surface-container text-primary font-bold border-r border-border-slate"><span className="material-symbols-outlined text-[20px]">grid_view</span></button>
-                                <button className="px-3 py-1 text-on-surface-variant hover:bg-surface-container transition-colors"><span className="material-symbols-outlined text-[20px]">format_list_bulleted</span></button>
-                            </div>
-                        </div>
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-slate-50">
-                                        {['Date', 'Unit', 'Category', 'Item', 'Quantity', 'Actions'].map(h => (
-                                            <th key={h} className={`px-6 py-4 text-table-header text-on-surface-variant border-b border-border-slate uppercase font-bold ${h === 'Actions' ? 'text-right' : ''}`}>{h}</th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-border-slate">
-                                    {[
-                                        { date: '2023-11-20', unit: 'Soe Unit', cat: 'Beneficiary', item: 'Premium Hybrid Corn Seed', qty: '500 kg', status: 'bg-success-green' },
-                                        { date: '2023-11-19', unit: 'Kupang Unit', cat: 'Supplier', item: 'NPK 15-15-15 Fertilizer', qty: '1,200 kg', status: 'bg-success-green' },
-                                        { date: '2023-11-19', unit: 'Soe Unit', cat: 'Beneficiary', item: 'Water Pumps (3 HP)', qty: '15 units', status: 'bg-success-green' },
-                                        { date: '2023-11-18', unit: 'Atambua Unit', cat: 'Logistics', item: 'Diesel Fuel (Agri-grade)', qty: '2,500 L', status: 'bg-error' }
-                                    ].map((row, i) => (
-                                        <tr key={i} className="hover:bg-surface-container-low transition-colors group">
-                                            <td className="px-6 py-4 font-body-md">{row.date}</td>
-                                            <td className="px-6 py-4">
-                                                <div className="flex items-center gap-2">
-                                                    <div className={`w-2 h-2 rounded-full ${row.status}`}></div>
-                                                    <span className="font-body-md">{row.unit}</span>
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4">
-                                                <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold ${row.cat === 'Beneficiary' ? 'bg-blue-50 text-blue-700' : 'bg-orange-50 text-orange-700'}`}>{row.cat}</span>
-                                            </td>
-                                            <td className="px-6 py-4 text-body-md">{row.item}</td>
-                                            <td className="px-6 py-4 font-bold">{row.qty}</td>
-                                            <td className="px-6 py-4 text-right">
-                                                <button className="p-2 text-on-surface-variant hover:text-primary opacity-0 group-hover:opacity-100"><span className="material-symbols-outlined">visibility</span></button>
-                                                <button className="p-2 text-on-surface-variant hover:text-primary opacity-0 group-hover:opacity-100"><span className="material-symbols-outlined">edit</span></button>
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="bg-white border border-border-slate rounded-xl p-6 shadow-sm">
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-headline-md font-bold">Data Distribution Map</h3>
-                                <span className="material-symbols-outlined text-primary">map</span>
-                            </div>
-                            <div className="aspect-video bg-surface-container rounded-lg overflow-hidden relative border border-border-slate">
-                                <img className="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxECbYqJlF9lgjFqLXoMuOw8BRBw9_jc3CSLUUVKm5E0xmQOV7C6eSvnsBEp_dppk4kYIzQP1v_EYQb6LnMYlmaDbNc9CA41y_CS5BSwoUwBr5J_7EhZhLm4Ho2d14Ugp4rNfy7OrWq2ISA7XLyXxUDXa5SiIFXIY5WoDDcuvIdtw4cqulpai3fEP8p_Wl0gwJNdNhGxQojKgyleBflZzHUGFZghYlWmadJBJz1u-0jcB996UGTZMLCsua9uUWTqF2pMig2GgYZ1A" alt="Map" />
-                                <div className="absolute inset-0 bg-primary/10 pointer-events-none"></div>
-                                <div className="absolute bottom-4 right-4 bg-white p-2 rounded border border-border-slate shadow-sm">
-                                    <p className="text-[10px] font-bold text-on-surface-variant uppercase">Live Tracking: 12 Active Units</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="bg-white border border-border-slate rounded-xl p-6 shadow-sm flex flex-col">
-                            <div className="flex items-center justify-between mb-6">
-                                <h3 className="text-headline-md font-bold">Extraction Health</h3>
-                                <span className="material-symbols-outlined text-success-green">check_circle</span>
-                            </div>
-                            <div className="space-y-4 flex-1">
-                                {[
-                                    { l: 'OCR Accuracy', v: '98.4%', w: '98.4%', c: 'bg-success-green' },
-                                    { l: 'Data Completeness', v: '92.1%', w: '92.1%', c: 'bg-primary' },
-                                    { l: 'Processing Speed', v: '1.2s / doc', w: '85%', c: 'bg-info-blue' }
-                                ].map(bar => (
-                                    <div key={bar.l}>
-                                        <div className="flex justify-between mb-1">
-                                            <span className="text-label-caps text-on-surface-variant">{bar.l}</span>
-                                            <span className="text-label-caps font-bold">{bar.v}</span>
-                                        </div>
-                                        <div className="w-full bg-surface-container rounded-full h-2">
-                                            <div className={`${bar.c} h-2 rounded-full`} style={{ width: bar.w }}></div>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-                            <div className="mt-8 p-4 bg-surface-container-low rounded-lg border border-primary/10">
-                                <p className="text-body-md text-on-surface">
-                                    <span className="font-bold text-primary">System Note:</span> 3 records from Soe Unit require manual verification due to handwritten overlaps.
-                                </p>
-                                <button className="mt-2 text-primary font-bold text-label-caps hover:underline">Review pending records</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-
-        const HistoryPage = () => (
-            <div className="ml-[280px] mt-16 p-8 min-h-screen">
-                <div className="max-w-container-max mx-auto">
-                    <div className="flex justify-between items-end mb-8">
-                        <div>
-                            <h2 className="text-headline-lg font-bold text-on-surface">Upload History</h2>
-                            <p className="text-body-lg text-on-surface-variant mt-2">Review and manage chronological logs of all agricultural data transmissions.</p>
-                        </div>
-                        <div className="flex gap-3">
-                            <button className="flex items-center gap-2 px-4 py-2 border border-border-slate rounded-lg text-body-md font-bold hover:bg-surface-container transition-colors">
-                                <span className="material-symbols-outlined text-[20px]">filter_list</span> Filter
-                            </button>
-                            <button className="flex items-center gap-2 px-4 py-2 bg-primary text-on-primary rounded-lg text-body-md font-bold hover:opacity-90 transition-opacity">
-                                <span className="material-symbols-outlined text-[20px]">download</span> Export Log
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-                        <div className="bg-white border border-border-slate p-6 rounded-xl">
-                            <p className="text-label-caps font-bold text-on-surface-variant mb-2">TOTAL UPLOADS</p>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-stat-value">1,284</span>
-                                <span className="text-success-green text-label-caps font-bold">+12%</span>
-                            </div>
-                        </div>
-                        <div className="bg-white border border-border-slate p-6 rounded-xl">
-                            <p className="text-label-caps font-bold text-on-surface-variant mb-2">SUCCESS RATE</p>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-stat-value">98.2%</span>
-                                <span className="material-symbols-outlined text-success-green">trending_up</span>
-                            </div>
-                        </div>
-                        <div className="bg-white border border-border-slate p-6 rounded-xl">
-                            <p className="text-label-caps font-bold text-on-surface-variant mb-2">FAILED EVENTS</p>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-stat-value text-error">24</span>
-                                <span className="text-on-surface-variant text-[10px]">MTD</span>
-                            </div>
-                        </div>
-                        <div className="bg-primary text-on-primary p-6 rounded-xl">
-                            <p className="text-label-caps font-bold opacity-80 mb-2 uppercase">Active Sessions</p>
-                            <div className="flex items-baseline gap-2">
-                                <span className="text-stat-value">12</span>
-                                <div className="flex -space-x-2">
-                                    <div className="w-6 h-6 rounded-full border-2 border-primary bg-surface-variant"></div>
-                                    <div className="w-6 h-6 rounded-full border-2 border-primary bg-surface-dim"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="bg-white border border-border-slate rounded-xl overflow-hidden shadow-sm">
-                        <div className="overflow-x-auto">
-                            <table className="w-full text-left border-collapse">
-                                <thead>
-                                    <tr className="bg-surface-container-low border-b border-border-slate">
-                                        {['FILENAME', 'UPLOADER', 'DATE & TIME', 'FORMAT', 'STATUS', 'ACTIONS'].map(h => (
-                                            <th key={h} className={`px-6 py-4 text-table-header text-on-surface-variant font-bold uppercase ${h === 'ACTIONS' ? 'text-right' : ''}`}>{h}</th>
-                                        ))}
-                                    </tr>
-                                </thead>
-                                <tbody className="divide-y divide-border-slate">
-                                    {[
-                                        { file: 'soil_analysis_q3_central_java.csv', user: 'Agus Santoso', time: 'Oct 24, 2023 • 14:22', fmt: 'CSV', status: 'Success', color: 'text-success-green' },
-                                        { file: 'drone_map_surakarta_01.tiff', user: 'Admin System', time: 'Oct 24, 2023 • 15:45', fmt: 'TIFF', status: 'Processing', color: 'text-secondary' },
-                                        { file: 'harvest_yield_log_2023.xlsx', user: 'Budi Wijaya', time: 'Oct 23, 2023 • 09:12', fmt: 'XLSX', status: 'Error', color: 'text-error' }
-                                    ].map((row, i) => (
-                                        <tr key={i} className="hover:bg-surface-container-low transition-colors group">
-                                            <td className="px-6 py-4">
-                                                <div className="flex items-center gap-3">
-                                                    <div className="w-8 h-8 rounded bg-primary/10 flex items-center justify-center text-primary">
-                                                        <span className="material-symbols-outlined text-[20px]">description</span>
-                                                    </div>
-                                                    <span className="font-bold text-on-surface">{row.file}</span>
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 text-on-surface-variant font-medium">{row.user}</td>
-                                            <td className="px-6 py-4 text-on-surface-variant">{row.time}</td>
-                                            <td className="px-6 py-4"><span className="px-2 py-1 bg-surface-container-high rounded text-[10px] font-bold">{row.fmt}</span></td>
-                                            <td className="px-6 py-4">
-                                                <div className={`flex items-center gap-2 font-bold ${row.color}`}>
-                                                    <span className={`w-2 h-2 rounded-full bg-current ${row.status === 'Processing' ? 'animate-pulse' : ''}`}></span>
-                                                    {row.status}
-                                                </div>
-                                            </td>
-                                            <td className="px-6 py-4 text-right">
-                                                {row.status === 'Error' ? (
-                                                    <button className="bg-primary text-on-primary px-3 py-1 rounded text-[10px] font-bold hover:opacity-90">Re-upload</button>
-                                                ) : (
-                                                    <button className="text-primary font-bold hover:underline">View Details</button>
-                                                )}
-                                            </td>
-                                        </tr>
-                                    ))}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-
-        // --- Main App ---
+        // --- Main App Component ---
 
         const App = () => {
             return (
                 <MemoryRouter>
-                    <Sidebar />
-                    <TopBar />
-                    <Routes>
-                        <Route path="/" element={<DashboardPage />} />
-                        <Route path="/upload" element={<UploadPage />} />
-                        <Route path="/records" element={<RecordsPage />} />
-                        <Route path="/history" element={<HistoryPage />} />
-                    </Routes>
+                    <div className="flex min-h-screen">
+                        <NavigationDrawer />
+                        <div className="flex-1">
+                            <Routes>
+                                <Route path="/" element={<DashboardPage />} />
+                                <Route path="/file-processing" element={<FileProcessingPage />} />
+                                <Route path="/operations" element={<OperationsPage />} />
+                                <Route path="/nutrition" element={<NutritionPage />} />
+                                <Route path="/supply-chain" element={<SupplyChainPage />} />
+                                <Route path="/settings" element={<SettingsPage />} />
+                            </Routes>
+                        </div>
+                    </div>
                 </MemoryRouter>
             );
         };
 
-        const root = createRoot(document.getElementById('root'));
+        const container = document.getElementById('root');
+        const root = createRoot(container);
         root.render(<App />);
 
     </script>
